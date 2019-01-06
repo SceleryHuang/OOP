@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function A() {
+            this.a = 1234;
+        }
+        A.prototype.show = function () {
+            alert(this.a);
+        };
+
+        var obja = new A();
+        obja.show();
+
+        //继承
+        function B() {
+            A.call(this);
+        }
+        for(var i in A.prototype){
+            B.prototype[i] = A.prototype[i];
+        }
+
+        var obj = new B();
+        obj.show();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{background: hotpink}
+        #div1 .avtive{background: chartreuse}
+        #div1 div{
+            height: 300px;
+            width:300px;
+            background: bisque;
+            display: none;
+        }
+    </style>
+    <script>
+        var oBtn = null;
+        var itab = null;
+
+        window.onload = function () {
+            var odiv = document.getElementById("div1");
+            oBtn = odiv.getElementsByTagName("input");
+            itab = odiv.getElementsByTagName("div");
+
+            for (var i = 0; i<oBtn.length;i++){
+                oBtn[i].index = i;
+                oBtn[i].onclick =fnClick;
+            }
+
+        };
+        function fnClick() {
+            for (var j = 0;j < oBtn.length;j++){
+                oBtn[j].className ='';
+                itab[j].style.display = "none";
+            }
+            this.className = "avtive";
+            //alert(itab[this.index]);
+            itab[this.index].style.display = "block";
+
+        }
+    </script>
+</head>
+<body>
+<div id ="div1">
+    <input class="avtive" type="button" value="111">
+    <input type="button" value="222">
+    <input type="button" value="333">
+
+<div style="display: block">23244</div>
+<div>haukgngfkjgnfm</div>
+<div>11111111111111111111</div>
+</div>
+</body>
+</html>
